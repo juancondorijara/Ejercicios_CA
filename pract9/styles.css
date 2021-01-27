@@ -1,0 +1,73 @@
+/*
+  https://developer.mozilla.org/es/docs/Web/CSS/animation
+  
+  Las animaciones tienen más propiedades:
+
+  animation-play-state: Establece si una animación está en ejecución o en pausa. Acepta los valores: running | paused
+
+  animation-delay: Establece el tiempo de retardo que debe transcurrir antes de comenzar la animación.
+
+  animation-direction: Establece el modo en el que se va a reproducir la animación.
+    Acepta los valores:  normal | reverse | alternate
+
+    animation-timing-function: Establece la forma en la que se moverá la animación en cada una de las interpolaciones.
+      Acepta los valores: ease | linear | ease-in | ease-out | ease-in-out | steps(n,[direction]) | cubic-bezier()
+
+    animation-fill-mode: Establece el modo en que una animación CSS aplica sus estilos. Acepta los valores:
+      none: La animación no aplicará los estilos ni antes ni después de su ejecución.
+      forwards: El objeto sobre el que se aplica la animación quedará con los valores y estilos que le aplique el último keyframe de la ejecución de la animación
+      backwards: La animación aplicará los valores definidos en el primer keyframe tan pronto como se aplique al objeto, y los retendrá durante el tiempo de animation-delay. El primer keyframe dependerá del valor de animation-direction
+      both: Durante el período definido por animation-delay, la animación aplicará los valores de propiedad definidos en el fotograma clave que comenzará la primera iteración de la animación.
+
+      animation: name duration timing-function delay iteration-count fill-mode;
+*/
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* animation-name: background; */
+  /* animation-duration: 5s; */
+  background-color: royalblue;
+  /* animation-fill-mode: both; */
+  /* animation-play-state: paused; */
+  /* animation-delay: 2s; */
+  /* animation-iteration-count: 3; */
+  /* animation-timing-function: steps(4); */
+
+  animation: background 5s steps(4) 2s 3 both;
+}
+
+@keyframes background {
+  0% {
+    background-color: greenyellow;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
+
+/* .box {
+  height: 200px;
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+}
+
+.children {
+  width: 100px;
+  height: 100px;
+  background-color: royalblue;
+  animation-name: translate;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes translate {
+  100% {
+    transform: translateX(calc(100vw - 100%));
+  }
+} */

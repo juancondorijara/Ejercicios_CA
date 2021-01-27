@@ -1,0 +1,19 @@
+.box {
+  width: 300px;
+  height: 300px;
+  margin: 1em;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.box:hover {
+  background-color: lime;
+}
+
+.animate {
+  transition: background-color 3s;
+}

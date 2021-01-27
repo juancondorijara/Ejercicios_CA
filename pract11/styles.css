@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: royalblue;
+  overflow: hidden;
+}
+
+.box {
+  height: 200px;
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+}
+
+.box:hover .children {
+  transform: translateX(calc(100vw - 100%));
+}
+
+.children {
+  width: 100px;
+  height: 100px;
+  background-color: royalblue;
+  transform: translateX(0);
+  transition: transform 1s linear;
+}
+
+.red {
+  background-color: red;
+}

@@ -1,0 +1,40 @@
+/*
+https://es.wikipedia.org/wiki/Curva_de_B%C3%A9zier
+https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function
+https://cubic-bezier.com
+https://easings.net/
+
+cubic-bezier(x1, y1, x2, y2)
+*/
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: royalblue;
+  overflow: hidden;
+}
+
+.box {
+  height: 200px;
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+}
+
+.box:hover .children {
+  transform: translateX(calc(100vw - 100%));
+}
+
+.children {
+  width: 100px;
+  height: 100px;
+  background-color: royalblue;
+  transform: translateX(0);
+  transition: transform 1.5s cubic-bezier(0.89, -0.6, 0.13, 1.5);
+}
+
+@keyframes translate {
+  100% {
+    transform: translateX(calc(100vw - 100%));
+  }
+}

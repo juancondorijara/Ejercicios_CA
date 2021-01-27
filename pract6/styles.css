@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  background-color: #2a363b;
+  font-family: sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #aaa;
+}
+
+.buttons {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background: none;
+  outline: none;
+  border: 2px solid #ffd8d5;
+  font-size: 1.3rem;
+  color: #ff847c;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 175px;
+  margin-bottom: 1rem;
+}
+
+.button--fill {
+  transition: color 0.4s;
+}
+
+.button--fill:hover {
+  color: #2a363b;
+}
+
+.button--fill::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ff847c;
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+  z-index: -1;
+}
+
+.button--fill:hover::before {
+  transform: translateX(0);
+}
+
+.button--cross {
+  transition: color 0.4s;
+}
+
+.button--cross:hover {
+  color: #2a363b;
+}
+
+.button--cross::before,
+.button--cross::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ff847c;
+  transition: transform 0.6s linear;
+  z-index: -1;
+}
+.button--cross::before {
+  transform: rotateY(90deg);
+}
+
+.button--cross::after {
+  transform: rotateX(90deg);
+}
+
+.button--cross:hover::before,
+.button--cross:hover::after {
+  transform: rotate(0deg);
+}
+
+.button--grow {
+  letter-spacing: -1px;
+  transition: box-shadow 0.5s, letter-spacing 0.5s;
+}
+
+.button--grow:hover {
+  letter-spacing: 5px;
+  box-shadow: 0 0 0 5px #ff847c;
+}
+
+.button--scale-text {
+  transition: color 0.4s;
+}
+
+.button--scale-text:hover {
+  color: #2a363b;
+}
+
+.button--scale-text::before {
+  content: attr(data-content);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(5);
+  color: #ff847c;
+  background-color: #2a363b;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.button--scale-text:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.button--shiney {
+  transition: color 0.4s;
+}
+
+.button--shiney:hover {
+  color: #2a363b;
+}
+
+.button--shiney::before,
+.button--shiney::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.button--shiney:hover::before {
+  background-color: #7c90ff;
+}
+
+.button--shiney::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  height: 30%;
+  background-color: #fff;
+  transform: rotate(45deg) translateY(650%);
+  transition: background-color 0.4s;
+}
+
+.button--shiney:hover::after {
+  transition: background-color 0.4s, transform 0.6s;
+  transform: rotate(45deg) translateY(-700%);
+}

@@ -1,0 +1,46 @@
+/* 
+  Las transiciones necesitan un evento que las dispare, no se pueden ejecutar por sí solas
+
+    Existen cuatro propiedas de las transiciones
+
+      transition-property: Establece la propiedad que se va a animar.
+      Acepta los valores: all | none | propiedad [, propiedad]
+
+      transition-duration: Establece la duración de la transición, si hubiera más de una se ponen separadas por comas. 
+      Acepta valores en segundos "s" y en milisegundos "ms" 
+
+      transition-delay: Establece el retraso que tendrá la transición antes de empezar
+
+      transition-timing-function: Establece la forma en la que se moverá la transición en cada una de las interpolaciones
+      Acepta los valores: ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps() | cubic-bezier()
+
+      Tenemos un shorthand que agrupa estas 4 propiedades
+      transition: transition-property transition-duration transition-delay transition-time-function
+*/
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: royalblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-delay: 0s, 1s;
+}
+
+.box:hover {
+  background-color: green;
+  color: black;
+}

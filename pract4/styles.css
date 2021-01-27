@@ -1,0 +1,66 @@
+/* 
+Transition timing function
+
+ease significa desacelerar/frenar
+
+ease: La transición comienza lentamente, acelera bruscamente y luego disminuye lentamente hacia el final.
+
+ease-in: La transición comienza lentamente, y luego se acelera progresivamente hasta el final.
+
+ease-out: La animación comienza abruptamente y luego se ralentiza progresivamente hacia el final. 
+
+ease-in-out: La animación comienza lentamente, se acelera y luego se ralentiza hacia el final.
+
+linear: La transición se mueve de principio a fin a una velocidad constante.
+
+función calc: Nos sirve para hacer cálculos.
+  calc(value operation value...)
+
+Shorthand transition
+
+transition: 2s transform ease-in
+transition: transform 2s ease-in
+transition: ease-in transform 2s
+*/
+
+body {
+  margin: 0;
+}
+
+.container {
+  background-color: salmon;
+}
+
+.box {
+  width: 80px;
+  height: 60px;
+  font-size: 0.8em;
+  background-color: royalblue;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition-property: transform; */
+  /* transition-duration: 2s; */
+}
+
+.container:hover .box {
+  transform: translateX(calc(100vw - 100%));
+  /* transition: transform 2s 1s ease-out; */
+}
+
+.ease {
+  transition-timing-function: ease;
+}
+.ease-in {
+  transition-timing-function: ease-in;
+}
+.ease-out {
+  transition-timing-function: ease-out;
+}
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+.linear {
+  transition-timing-function: linear;
+}
